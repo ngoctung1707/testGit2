@@ -1,0 +1,1 @@
+//Layout cho các trang xác thực (đăng nhập, đăng ký)

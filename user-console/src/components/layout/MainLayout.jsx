@@ -1,0 +1,1 @@
+//Layout chính cho ứng dụng
