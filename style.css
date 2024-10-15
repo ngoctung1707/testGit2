@@ -1,0 +1,120 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #2c3e50;
+}
+
+.box {
+  width: 1000px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+}
+
+#pinkboard {
+  position: relative;
+  margin: auto;
+  height: 750px;
+  width: 750px;
+  animation: animate 1.2s infinite;
+}
+
+#pinkboard:before,
+#pinkboard:after {
+  content: "";
+  position: absolute;
+  background: #d63031;
+  width: 100px;
+  height: 160px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+}
+
+#pinkboard:before {
+  left: 100px;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+#pinkboard:after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%; /*thực hiện từ tâm phần tử*/
+}
+
+.text {
+  margin: 20px 0 0 20px;
+  display: block;
+  color: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: "Grey Qo", cursive;
+  font-size: 3rem;
+  opacity: 0%;
+}
+
+.text1 {
+  animation: fadeInOut 4s ease-in-out 1s 1 alternate; /*chạy đầu*/
+}
+
+.text2 {
+  animation: fadeInOut 4s ease-in-out 5s 1 alternate; /*chạy thứ 2*/
+}
+
+.text3 {
+  animation: fadeInOut 4s ease-in-out 9s 1 alternate; /*chạy thứ 3*/
+}
+
+.img {
+  height: 200px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #d63031;
+  font-size: 4.5rem;
+  font-family: "Grey Qo", cursive;
+  font-weight: 700;
+  border-radius: 50%;
+  opacity: 0%;
+  z-index: 1;
+  transition: 1.5s;
+}
+
+.img:hover {
+  opacity: 100%;
+}
+
+@keyframes animate {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(0.8);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0; /* Hidden at the start and end */
+  }
+  40% {
+    opacity: 1; /* Fully visible in the middle */
+  }
+  60% {
+    opacity: 1; /* Fully visible in the middle */
+  }
+}
